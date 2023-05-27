@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Dropdown</title>
+</head>
+<body>
+    <div class="menuBar">
+        <ul>
+            <li id="menu1"><a href="#">ホーム</a>
+                <div class="subMenu-1">
+                    <ul>
+                        <li><a href="#">サイトについて</a></li>
+                        <li><a href="#">社訓</a></li>
+                        <li><a href="#">事業内容</a></li>
+                        <li><a href="#">スローガン</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li id="menu2"><a href="#">オンライン相談</a>
+                <div class="subMenu-1" id="menu2">
+                    <ul>
+                        <li><a href="#">サイトについて</a></li>
+                        <li><a href="#">社訓</a></li>
+                        <li><a href="#">事業内容</a></li>
+                        <li><a href="#">スローガン</a></li>
+                    </ul>
+                </div></li>
+            <li id="menu3"><a href="#">ブログ</a>
+                <div class="subMenu-1" id="menu3">
+                    <ul>
+                        <li><a href="#">サイトについて</a></li>
+                        <li><a href="#">社訓</a></li>
+                        <li><a href="#">事業内容</a></li>
+                        <li><a href="#">スローガン</a></li>
+                    </ul>
+                </div></li>
+            <li id="menu4"><a href="#">お問い合わせ</a>
+                <div class="subMenu-1" id="menu4">
+                    <ul>
+                        <li><a href="#">サイトについて</a></li>
+                        <li><a href="#">社訓</a></li>
+                        <li><a href="#">事業内容</a></li>
+                        <li><a href="#">スローガン</a></li>
+                    </ul>
+                </div></li>
+        </ul>
+    </div>
+
+    <script>
+        const menues = [];
+        for(let i=1; i<=4; i++) {
+            let menu = document.getElementById(`menu${i}`);
+            menues.push(menu);
+        }
+
+        document.addEventListener("click", (e) =>{
+            menues.map((menu) => {
+                if(e.target.id == menu.id){
+                    menu.classList.add("active");
+                } else {
+                    menu.classList.remove("active");
+                }
+            })
+        })
+    </script>
+</body>
+</html>
